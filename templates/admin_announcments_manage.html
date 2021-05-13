@@ -1,0 +1,55 @@
+{% extends "head.html" %}
+
+{% block body %}
+
+
+<div class="card-columns mt-2 ml-5 mr-5" style="column-count: 4;">
+
+<div class="card bg-light">
+  <div class="card-header">
+    <h3><strong>New Announcement</strong></h3>
+  </div>
+
+  <div class="card-body">
+    <form method="post" action="">
+      {{ form.hidden_tag() }}
+      <div class="form-group">
+        <label>Announcement</label>
+        {{form.content(class="form-control")}}
+      </div>
+      <div class="form-group">
+        <label>End Date</label>
+        {{form.enddate(class="form-control")}}
+      </div>
+      <div class="form-group">
+        <label>End Time</label>
+        {{form.endtime(class="form-control")}}
+      </div>
+  </div>
+  <div class="card-footer" style="text-align: right;">
+    {{form.submit(class="btn btn-primary")}}
+  </div>
+</form>
+</div>
+
+{% for ano in alist %}
+
+<div class="card bg-light">
+
+  <div class="card-header">
+    <strong>Ending: {{ano[2]}}</strong>
+  </div>
+  <div class="card-body">
+    {{ano[1]}}
+  </div>
+  <div class="card-footer" style="text-align: right;">
+    <a href="#" class="btn btn-primary">x</a>
+  </div>
+
+</div>
+
+{% endfor %}
+</div>
+
+
+{% endblock %}

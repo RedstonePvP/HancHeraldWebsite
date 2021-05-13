@@ -1,0 +1,53 @@
+{% extends "m_head.html" %}
+
+{% block body %}
+
+  <head>
+    <title>{{ catg }} - Hanc Herald</title>
+
+  </head>
+
+    {% if author %}
+    <div class="card bg-light ml-1 mr-1">
+      <h1>All Articles by {{author}}</h1>
+    </div>
+    {% endif %}
+
+    <div class="card-columns ml-1 mt-2 mr-1" style="column-count: 1;">
+      {% if askadam %}
+      <div class="card text-white bg-info">
+        <form action="" method="post">
+          {{ form.hidden_tag() }}
+        <div class="card-header">
+          <strong>Ask Adam</strong>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label>Name</label>
+            {{form.name(class="form-control")}}
+          </div>
+          <div class="form-group">
+            {{form.question(class="form-control")}}
+          </div>
+        </div>
+        <div class="card-footer" style="text-align: right;">
+          {{form.submit(class="btn btn-dark")}}
+        </div>
+      </form>
+      </div>
+      {% endif %}
+      {% for art in artlist %}
+      <a href="/article/{{art[3]}}">
+      <div class="card">
+        <img src="https://hancherald.b-cdn.net/images/{{art[0]}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{art[1]}}</h5>
+          <p class="card-text">{{art[2]}}</p>
+        </div>
+      </div>
+    </a>
+      {% endfor %}
+    </div>
+
+
+{% endblock %}

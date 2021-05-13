@@ -1,0 +1,92 @@
+{% extends "m_head.html" %}
+
+{% block body %}
+
+<style media="screen">
+  .scorecard1{
+    position: absolute;
+    top: 90px;
+    left: 33%;
+  }
+  .scorecard2{
+    position: absolute;
+    top: 90px;
+    left: 50%;
+  }
+</style>
+
+<div class="card ml-1 mr-1 bg-light" style="height: 100%;">
+  <div class="card-body" style="padding: 0px;">
+    {% if not sports %}
+      No Upcoming Games
+    {% else %}
+    {% for sport in sports %}
+      {% if sport[1] == 1 %}
+          <div class="mt-2 card bg-light border-0 shadow-lg ml-1 mr-1 mb-5">
+            <div class="container-fluid mt-1">
+              <div class="row">
+                <div class="col- text-center text-body ml-1 mr-1">
+                  <img class="text-center" src="https://hancherald.b-cdn.net/static/hanc_logo.png" alt="" width="80px" height="80px">
+                  <h4 class="text-center">HANC</h4>
+                </div>
+                <div class="col- text-center text-muted">
+                  <h3>
+                    {% if sport[0] == "b" %}
+                    <i class="fas fa-basketball-ball"></i>
+                    {% endif %}
+                    {% if sport[0] == "s" %}
+                    <i class="fas fa-futbol"></i>
+                    {% endif %}
+                    {% if sport[0] == "h" %}
+                    <i class="fas fa-hockey-puck"></i>
+                    {% endif %}
+
+                  </h3>
+                  <h5>{{sport[2]}}</h5>
+                </div>
+                <div class="col- text-center text-body ml-1 mr-1">
+                  <img class="text-center" src="https://hancherald.b-cdn.net/sports_logos/{{sport[3]}}" alt="" width="80px" height="80px">
+                  <h4 class="text-center">{{sport[4]}}</h4>
+                </div>
+              </div>
+            </div>
+                <div class="card bg-primary scorecard1 rounded-0 border-0" style="width: 50px; text-align: center"><h1>{{sport[5]}}</h1></div>
+                <div class="card bg-secondary scorecard2 rounded-0 border-0" style="width: 50px; text-align: center"><h1>{{sport[6]}}</h1></div>
+          </div>
+          {% else %}
+          <div class="mt-2 card bg-light border-0 shadow-lg ml-1 mr-1 mb-5">
+            <div class="container-fluid mt-1">
+              <div class="row">
+                <div class="col- text-center text-body ml-1 mr-1">
+                  <img class="text-center" src="https://hancherald.b-cdn.net/sports_logos/{{sport[3]}}" alt="" width="80px" height="80px">
+                  <h4 class="text-center">{{sport[4]}}</h4>
+                </div>
+                <div class="col- text-center text-muted">
+                  {% if sport[0] == "b" %}
+                  <i class="fas fa-basketball-ball"></i>
+                  {% endif %}
+                  {% if sport[0] == "s" %}
+                  <i class="fas fa-futbol"></i>
+                  {% endif %}
+                  {% if sport[0] == "h" %}
+                  <i class="fas fa-hockey-puck"></i>
+                  {% endif %}
+                  <h5>{{sport[2]}}</h5>
+                </div>
+                <div class="col- text-center text-body ml-1 mr-1">
+                  <img class="text-center" src="https://hancherald.b-cdn.net/static/hanc_logo.png" alt="" width="80px" height="80px">
+                  <h4 class="text-center">HANC</h4>
+                </div>
+              </div>
+            </div>
+                <div class="card bg-primary scorecard1 rounded-0 border-0" style="width: 50px; text-align: center"><h1>{{sport[6]}}</h1></div>
+                <div class="card bg-secondary scorecard2 rounded-0 border-0" style="width: 50px; text-align: center"><h1>{{sport[5]}}</h1></div>
+          </div>
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+
+  </div>
+</div>
+
+{% endblock %}

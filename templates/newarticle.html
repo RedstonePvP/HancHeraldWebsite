@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Post New - Hanc Herald</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../static/browsericon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="Stylesheet" type="text/css" href="../static/jHtmlArea/style/jHtmlArea.css" />
+    <link rel="Stylesheet" type="text/css" href="../static/jHtmlArea/style/jHtmlArea.ColorPickerMenu.css" />
+
+    <style type="text/css">
+        /* body { background: #ccc;} */
+        div.jHtmlArea .ToolBar ul li a.custom_disk_button
+        {
+            background: url(images/disk.png) no-repeat;
+            background-position: 0 0;
+        }
+
+        div.jHtmlArea { border: solid 1px #ccc; }
+    </style>
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #b0bbeb;">
+      <a class="navbar-brand" href="#">
+        <a class="nav-link" href="/"><i class="fas fa-home"></i></a>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="/admin"><i class="fas fa-users-cog"></i></a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Pick Your Catagories</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <button type="button" name="button" class="btn btn-danger mb-1 catgbtn" data-catg="Current Events">Current Events</button>
+            <button type="button" name="button" class="btn btn-danger mb-1 catgbtn" data-catg="Politics">Politics</button>
+            <button type="button" name="button" class="btn btn-danger mb-1 catgbtn" data-catg="Science & Medicine">Science & Medicine</button>
+            <button type="button" name="button" class="btn btn-danger mb-1 catgbtn" data-catg="Interviews">Interviews</button>
+            <button type="button" name="button" class="btn btn-danger mb-1 catgbtn" data-catg="Spirit Store">Spirit Store</button>
+            <button type="button" name="button" class="btn btn-danger mb-1 catgbtn" data-catg="Sports">Sports</button>
+            <button type="button" name="button" class="btn btn-danger mb-1 catgbtn" data-catg="Ask Adam">Ask Adam</button>
+            <button type="button" name="button" class="btn btn-danger mb-1 catgbtn" data-catg="Opinion & Entertainment">Opinion & Entertainment</button>
+            <button type="button" name="button" class="btn btn-danger mb-1 catgbtn" data-catg="Art">Art</button>
+            <button type="button" name="button" class="btn btn-danger mb-1 catgbtn" data-catg="Creative Literature">Creative Literature</button>
+            <button type="button" name="button" class="btn btn-danger mb-1 catgbtn" data-catg="Poetry">Poetry</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="imagem" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Image from {{date}}</h5>
+        <a href="/new/image" class="btn btn-primary ml-3"><i class="fas fa-plus-square"></i></a>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="https://hancherald.b-cdn.net/images/{{filename}}" alt="" width="100%">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-">
+
+        </div>
+        <div class="col-md">
+          <div class="card bg-primary mt-5 text-white">
+            <div class="card-header">
+              <h2 class="card-title">Post New Article</h2>
+            </div>
+
+            <form class="mt-3">
+              <div class="form-group ml-3 mr-3">
+                <label for="exampleInputEmail1">Title</label>
+                <input type="text" class="form-control formtitle" placeholder="Title" id="exampleInputEmail1">
+              </div>
+
+              <div class="form-group ml-3 mr-3">
+                <label for="exampleFormControlTextarea1">Description</label>
+                <textarea class="formdesc form-control" name="name" rows="4" cols="80" class="form-control"></textarea>
+              </div>
+
+              <div class="form-group ml-3 mr-3">
+                <label for="exampleInputEmail1">Image Being Used For Cover Uploaded On {{date}}</label>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#imagem">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+
+              <div class="form-group mr-3 ml-3">
+                <label for="exampleFormControlSelect1">Writer</label>
+                <select class="form-control formwriter" id="exampleFormControlSelect1">
+                  {% for name in userlist %}
+                  <option>{{name}}</option>
+                  {% endfor %}
+                </select>
+              </div>
+
+            </form>
+
+            <div class="ml-3 mr-3 mt-2 mb-2 card bg-light">
+              <textarea name="name" rows="15" cols="190" class=" mt-5 bg-light" class="texteditor" id="edit"></textarea>
+            </div>
+
+            <button type="button" class="btn btn-dark mt-3 ml-3" data-toggle="modal" data-target="#exampleModal" style="max-width: 10%; min-width: 10%;">
+              Catagories: <span class="numocat">0</span>
+            </button>
+
+            <button class="btn btn-dark mt-3 ml-3 subbtn" id="button123" style="max-width: 10%; min-width: 10%;">Submit</button>
+
+
+          </div>
+        </div>
+        <div class="col-">
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../static/jHtmlArea/scripts/jHtmlArea-0.8.js"></script>
+    <script type="text/javascript" src="../static/jHtmlArea/scripts/jHtmlArea.ColorPickerMenu-0.8.js"></script>
+    <script src="https://kit.fontawesome.com/d8440dd275.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+          $("#edit").htmlarea({
+    // Override/Specify the Toolbar buttons to show
+    toolbar: [
+        ["html"], ["bold", "italic", "underline", "|", "forecolor"],
+        ["h1", "h2", "h3", "h4", "h5", "h6"],
+        ["link", "unlink", "|", "image"],
+    ]
+  }); // Initialize jHtmlArea's with all default values
+
+
+    </script>
+    <script type="text/javascript">
+      Array.prototype.remove = function() {
+        var what, a = arguments, L = a.length, ax;
+        while (L && this.length) {
+            what = a[--L];
+            while ((ax = this.indexOf(what)) !== -1) {
+                this.splice(ax, 1);
+            }
+        }
+        return this;
+    };
+    catg_list = []
+    $("#button123").click(function(e){
+      cat_string = catg_list.toString()
+      console.log("string: "+cat_string)
+      postdata = {"title":$(".formtitle").val(), "writer":$(".formwriter").val(), "contents":$('#edit').htmlarea('toHtmlString'),
+    "catg":cat_string, "desc":$(".formdesc").val()}
+      console.log("button clicked")
+      $.ajax({
+        url: "/new/article",
+        type: "POST",
+        data: postdata,
+        success: function(data)
+        {
+            console.log(data)
+            window.location.replace("/")
+        },
+      });
+
+    });
+    $(".catgbtn").click(function(e){
+      if ($(this).hasClass("btn-success")){
+        $(this).removeClass("btn-success")
+        $(this).addClass("btn-danger")
+        catg_list.remove($(this).data("catg"))
+        console.log(catg_list)
+        amnt = $(".numocat").text()
+        int = parseInt(amnt, 10)
+        int = int-1
+        $(".numocat").text(int)
+      }
+      else {
+        $(this).removeClass("btn-danger")
+        $(this).addClass("btn-success")
+        catg_list.push($(this).data("catg"))
+        console.log(catg_list)
+        amnt = $(".numocat").text()
+        int = parseInt(amnt, 10)
+        int = int+1
+        $(".numocat").text(int)
+      }
+
+    });
+
+    </script>
+
+  </body>
+</html>

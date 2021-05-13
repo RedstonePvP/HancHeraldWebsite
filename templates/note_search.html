@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Hanc Note Database</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../static/browsericon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <style media="screen">
+
+      #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: blue;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 4px;
+      }
+
+      #myBtn:hover {
+        background-color: #555;
+      }
+
+    </style>
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #b0bbeb;">
+      <a class="navbar-brand" href="#">
+        < Go Back To Hanc Herald
+      </a>
+    </nav>
+
+    <br>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-4">
+
+          <div class="card" style="background-color: #b0bbeb;">
+            <div class="card-header" style="background-color: #717ba8;"><h5 class="card-title">Seach HANC Notes Database</h5></div>
+            <div class="card-body">
+
+              <form>
+                  <label for="exampleFormControlInput1">Search</label>
+                <div class="form-inline">
+                  <input type="text" class="form-control">
+                  <button class="btn btn-primary ml-2" type="button">Go!</button>
+                </div>
+                <div class="form-group mt-2">
+                  <label for="exampleFormControlSelect1">Grade</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>All</option>
+                    <option>9th</option>
+                    <option>10th</option>
+                    <option>11th</option>
+                    <option>12th</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Class</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Any</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+        <div class="col-8">
+
+          <div class="card-columns" style="column-count: 2;">
+
+            <div class="card" style="background-color: #b0bbeb;">
+              <div class="card-body">
+                <h5 class="card-title">Bio Unit 3 review for test</h5>
+                <h6>Author: <a href="#">Avi Baruch</a></h6>
+                <h6>Pages: 7</h6>
+              </div>
+              <div class="card-footer text-right">
+                <a href="#" class="btn btn-primary"><i class="fas fa-file-download"></i></a>
+              </div>
+            </div>
+
+            <div class="card" style="background-color: #b0bbeb;">
+              <div class="card-body">
+                <h5 class="card-title">Bio Unit 3 review for test</h5>
+                <h6>Author: <a href="#">Avi Baruch</a></h6>
+                <h6>Pages: 7</h6>
+              </div>
+              <div class="card-footer text-right">
+                <a href="#" class="btn btn-primary"><i class="fas fa-file-download"></i></a>
+              </div>
+            </div>
+
+            <div class="card" style="background-color: #b0bbeb;">
+              <div class="card-body">
+                <h5 class="card-title">Bio Unit 3 review for test</h5>
+                <h6>Author: <a href="#">Avi Baruch</a></h6>
+                <h6>Pages: 7</h6>
+              </div>
+              <div class="card-footer text-right">
+                <a href="#" class="btn btn-primary"><i class="fas fa-file-download"></i></a>
+              </div>
+            </div>
+
+            <div class="card" style="background-color: #b0bbeb;">
+              <div class="card-body">
+                <h5 class="card-title">Bio Unit 3 review for test</h5>
+                <h6>Author: <a href="#">Avi Baruch</a></h6>
+                <h6>Pages: 7</h6>
+              </div>
+              <div class="card-footer text-right">
+                <a href="#" class="btn btn-primary"><i class="fas fa-file-download"></i></a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="card-columns">
+
+          <div class="card" style="background-color: #b0bbeb;">
+            <div class="card-body">
+              <h5 class="card-title">Bio Unit 3 review for test</h5>
+              <h6>Author: <a href="#">Avi Baruch</a></h6>
+              <h6>Pages: 7</h6>
+            </div>
+            <div class="card-footer text-right">
+              <a href="#" class="btn btn-primary"><i class="fas fa-file-download"></i></a>
+            </div>
+          </div>
+
+          <div class="card" style="background-color: #b0bbeb;">
+            <div class="card-body">
+              <h5 class="card-title">Bio Unit 3 review for test</h5>
+              <h6>Author: <a href="#">Avi Baruch</a></h6>
+              <h6>Pages: 7</h6>
+            </div>
+            <div class="card-footer text-right">
+              <a href="#" class="btn btn-primary"><i class="fas fa-file-download"></i></a>
+            </div>
+          </div>
+
+          <div class="card" style="background-color: #b0bbeb;">
+            <div class="card-body">
+              <h5 class="card-title">Bio Unit 3 review for test</h5>
+              <h6>Author: <a href="#">Avi Baruch</a></h6>
+              <h6>Pages: 7</h6>
+            </div>
+            <div class="card-footer text-right">
+              <a href="#" class="btn btn-primary"><i class="fas fa-file-download"></i></a>
+            </div>
+          </div>
+
+          <div class="card" style="background-color: #b0bbeb;">
+            <div class="card-body">
+              <h5 class="card-title">Bio Unit 3 review for test</h5>
+              <h6>Author: <a href="#">Avi Baruch</a></h6>
+              <h6>Pages: 7</h6>
+            </div>
+            <div class="card-footer text-right">
+              <a href="#" class="btn btn-primary"><i class="fas fa-file-download"></i></a>
+            </div>
+          </div>
+          <div class="card" style="background-color: #b0bbeb;">
+            <div class="card-body">
+              <h5 class="card-title">Bio Unit 3 review for test</h5>
+              <h6>Author: <a href="#">Avi Baruch</a></h6>
+              <h6>Pages: 7</h6>
+            </div>
+            <div class="card-footer text-right">
+              <a href="#" class="btn btn-primary"><i class="fas fa-file-download"></i></a>
+            </div>
+          </div>
+          <div class="card" style="background-color: #b0bbeb;">
+            <div class="card-body">
+              <h5 class="card-title">Bio Unit 3 review for test</h5>
+              <h6>Author: <a href="#">Avi Baruch</a></h6>
+              <h6>Pages: 7</h6>
+            </div>
+            <div class="card-footer text-right">
+              <a href="#" class="btn btn-primary"><i class="fas fa-file-download"></i></a>
+            </div>
+          </div>
+
+
+      </div>
+      <div class="row mx-auto">
+        <button type="button" name="button" class="mb-1 btn btn-primary"><h4><i class="fas fa-chevron-circle-down"></i></h4></button>
+      </div>
+
+    </div>
+</div>
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+mybutton.style.display = "block";
+} else {
+mybutton.style.display = "none";
+}
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+document.body.scrollTop = 0;
+document.documentElement.scrollTop = 0;
+}
+</script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d8440dd275.js" crossorigin="anonymous"></script>
+
+  </body>
+</html>

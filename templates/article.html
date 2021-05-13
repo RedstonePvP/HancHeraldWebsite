@@ -1,0 +1,115 @@
+{% extends "head.html" %}
+
+{% block body %}
+
+    <style media="screen">
+      .center-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .center-div {
+        margin: auto;
+        width: 75%;
+
+      }
+
+      #spcss a:hover {
+        color: blue;
+        text-decoration: underline;
+      }
+      #spcss a {
+        color: blue;
+      }
+
+    </style>
+
+
+    <div class="text-center">
+      <h1>{{title}}</h1>
+    </div>
+
+      <img src="https://hancherald.b-cdn.net/images/{{img}}" alt="" class="center-img mt-5 rounded" style="max-width: 80%; min-width: 50%;">
+
+      <div class="center-div mt-3" id="spcss">
+        <h4>Author: <a href="/writers/{{auid}}">{{author}}</a></h4>
+        <p class="text-muted">{{date}}</p>
+
+        <div class="body">
+          {{contents}}
+        </div>
+        <hr>
+        <div class="">
+          <h2>You Might Like</h2>
+          <div class="card-deck mb-3">
+            <div class="card">
+              <img src="../static/browsericon.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="../static/browsericon.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="../static/browsericon.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <hr>
+
+          <div class="card bg-light mt-3 ml-5 mr-5">
+            <form action="" method="post">
+              {{ form.hidden_tag() }}
+            <div class="card-header">
+              <div class="form-group">
+                <label>Name</label>
+                {{form.name(class="form-control")}}
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                {{form.comment(class="form-control", value="")}}
+              </div>
+            </div>
+            <div class="card-footer" style="text-align: right;">
+              {{form.submit(class="btn btn-primary")}}
+            </div>
+          </form>
+          </div>
+
+          <hr class="mb-2 ml-4 mr-4">
+
+          {% for c in clist %}
+          <div class="card bg-light mb-2 ml-5 mr-5">
+            <div class="card-header">
+              <strong>{{c[0]}}</strong> <span class="text-muted">{{c[2]}}</span>
+            </div>
+            <div class="card-body">
+              {{c[1]}}
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+
+{% endblock %}

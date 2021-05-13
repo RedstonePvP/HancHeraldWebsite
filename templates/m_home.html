@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Hanc Herald</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../static/browsericon.png">
+    <script src="https://kit.fontawesome.com/d8440dd275.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <style media="screen">
+
+        .card-columns {
+            column-count: 2;
+        };
+        .wrapper {
+          background-image: url(http://placehold.it/250x250);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          width: 100%;
+          height: 250px;
+
+        };
+
+        .center {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 500px;
+          width: 500px;
+        }
+
+img.center {
+display: block;
+margin: 0 auto;
+}
+nav {
+  font-size: 22px;
+  text-align: center;
+}
+
+    </style>
+
+    <header role="banner">
+  <nav class="navbar navbar-expand-lg navbar-white border border-light regbar">
+    <button class="navbar-toggler text-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon text-dark">=</span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="/m">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/m">Catagroies</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/m">Sports</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/m">Medrsha Hanc</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+</header>
+
+    <br>
+
+    <style media="screen">
+    a { color: inherit; }
+    a:hover {color: inherit;}
+
+    </style>
+
+    <style>
+    a:hover {
+    text-decoration: none;
+        }
+</style>
+
+
+    <div class="container-fluid ml-1 mr-1">
+
+      <div class="row">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control serinput" placeholder="Search">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary sbtn" type="button"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+      {% if annol %}
+      <a href="/announcement">
+        <marquee class="mb-2" style="background-color: #a5abb5;">{{annol}}</marquee>
+      </a>
+      {% endif %}
+      </div>
+
+      <div class="row">
+        {% if medrash %}
+
+        <a href="/medrash/post/{{medrash[0]}}">
+        <div class="card text-white bg-info mb-2">
+          <div class="card-header">Medrasha Hanc - Parsha {{medrash[1]}}</div>
+          <div class="card-body">
+            <h5 class="card-title">A New Issue Is Avalible!</h5>
+            <p class="card-text">Click here to view it</p>
+          </div>
+        </div>
+        </a>
+
+        {% endif %}
+        {% for art in artic %}
+          <a href="/m/article/{{art[3]}}">
+          <div class="card">
+            <div>
+              <img src="https://hancherald.b-cdn.net/images/{{art[0]}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{art[1]}}</h5>
+              <p class="card-text">{{art[2]}}</p>
+              <p class="card-text"><small class="text-muted">Uploaded {{art[4]}}</small></p>
+            </div>
+            </div>
+          </div>
+        </a>
+        {% endfor %}
+
+
+      </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+      $(".serinput").on('keyup', function(e) {
+        if (e.keyCode === 13) {
+          SendSearch();
+        }
+      });
+
+      $(".sbtn").click(function(e){
+        SendSearch();
+      });
+
+      function SendSearch() {
+        value = $(".serinput").val()
+        console.log(value)
+        console.log("button clicked")
+        $.ajax({
+          url: "/api/search",
+          type: "POST",
+          data: {"query":value},
+          success: function(data)
+          {
+              console.log(data)
+              window.location.replace("/m/search")
+          },
+        });
+      }
+    });
+    </script>
+
+  </body>
+</html>

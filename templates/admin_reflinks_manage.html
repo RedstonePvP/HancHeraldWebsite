@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Hanc Herald</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../static/browsericon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #b0bbeb;">
+      <a class="navbar-brand" href="#">
+        <a class="nav-link" href="/"><i class="fas fa-home"></i></a>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="/admin"><i class="fas fa-users-cog"></i></a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-"></div>
+
+        <div class="col">
+
+          <table class="table table-striped mt-5">
+            <thead>
+              <tr>
+                <th scope="col">Id #</th>
+                <th scope="col">Link</th>
+                <th scope="col">Uses</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">-</th>
+                <td contenteditable="true" class="formlink"></td>
+                <td>0</td>
+                <td><button class="btn btn-primary ml-5" id="newuser123"><i class="far fa-save"></i></button></td>
+              </tr>
+
+              {% for ref in reflist %}
+              <tr>
+                <th scope="row">{{ref[0]}}</th>
+                <td>{{ref[1]}}</td>
+                <td>{{ref[2]}}</td>
+                <td>
+                  <div class="btn-group text-white" role="group">
+                    <a class="btn btn-primary" href="/admin/ref/del/{{ref[0]}}"><i class="fas fa-trash-alt"></i></a>
+                  </div>
+                </td>
+              </tr>
+              {% endfor %}
+
+            </tbody>
+          </table>
+
+        </div>
+
+        <div class="col-"></div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d8440dd275.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      $("#newuser123").click(function(e){
+        postdata = {"link":$(".formlink").text()}
+      console.log(postdata);
+
+      $.ajax({
+        url: "/admin/ref/new",
+        type: "POST",
+        data: postdata,
+        success: function(data)
+        {
+          window.location.replace("/admin/ref")
+        },
+      });
+      });
+    </script>
+
+  </body>
+</html>

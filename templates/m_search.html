@@ -1,0 +1,32 @@
+{% extends "m_head.html" %}
+
+{% block body %}
+
+<div class="card bg-light ml-1 mr-1 mt-3 mb-3">
+  <div class="card-body">
+    <form  action="" method="post">
+      {{ form.hidden_tag() }}
+      <div class="input-group">
+        {{form.query(class="form-control", value=valabc)}}
+        {{form.submit(class="btn btn-primary")}}
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<div class="card-columns ml-1 mr-1" style="column-count: 1;">
+  {% for art in artlist %}
+  <a href="/article/{{art[3]}}">
+  <div class="card">
+    <img src="../../static/images/{{art[0]}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{art[1]}}</h5>
+      <p class="card-text">{{art[2]}}</p>
+    </div>
+  </div>
+</a>
+  {% endfor %}
+</div>
+
+{% endblock %}

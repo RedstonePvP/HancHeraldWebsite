@@ -1,0 +1,383 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <title>Hanc Herald</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../static/browsericon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <style media="screen">
+
+        .card-columns {
+            column-count: 2;
+        };
+        .wrapper {
+          background-image: url(http://placehold.it/250x250);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          width: 100%;
+          height: 250px;
+
+        };
+
+        .center {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 500px;
+          width: 500px;
+        }
+
+img.center {
+display: block;
+margin: 0 auto;
+}
+nav {
+  font-size: 22px;
+  text-align: center;
+}
+
+    </style>
+
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Extra Links</h3>
+          </div>
+          <div class="modal-body">
+            <a href="#" role="button" class="btn btn-primary btn-lg btn-block">Spirit Store</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header role="banner">
+      <img id="logo-main" src="../static/Picture1.png" width="400" alt="Logo Thing main logo" class="center mb-2">
+  <nav class="navbar navbar-expand-lg navbar-white border border-light regbar">
+    <button class="navbar-toggler text-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon text-dark"><i class="fas fa-bars"></i></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item active">
+          <a href="/random" class="nav-link mr-5"><i class="fas fa-random"></i></a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="/"><i class="fas fa-home"></i> <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            News
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/catg/Current-Events">Current Events</a>
+            <a class="dropdown-item" href="/catg/Politics">Politics</a>
+            <a class="dropdown-item" href="/catg/Science-&-Medicine">Science & Medicine</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            HANC Life
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/catg/Interviews">Interviews</a>
+            <a class="dropdown-item" href="/catg/Special-Events">Special Events</a>
+            <a class="dropdown-item" href="/catg/Spirit-Store">Spirit Store</a>
+            <a class="dropdown-item" href="/catg/Sports">Sports</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Lifestyle
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/catg/Ask Adam">Ask Adam</a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/catg/Opinion-&-Entertainment">Opinion & Entertainment</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Student Works
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/catg/Art">Art</a>
+            <a class="dropdown-item" href="/catg/Creative-Literature">Creative Literature</a>
+            <a class="dropdown-item" href="/catg/Poetry">Poetry</a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/staff">Staff</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href=".bd-example-modal-sm" data-toggle="modal" data-target=".bd-example-modal-sm">Links</a>
+        </li>
+
+      </ul>
+      <div class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-success my-2 my-sm-0 serbtn"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light border border-light searchbar">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <input class="ml-2 mr-2 serinput" type="text" placeholder="Search" aria-label="Search" style="border: 0; width: 100%;">
+      <button class="btn btn-outline-success mr-2 sbtn" type="submit"><i class="fas fa-search"></i></button>
+      <button class="btn btn-outline-success xbtn" type="submit"><strong>X</strong></button>
+  </div>
+</nav>
+
+    <br>
+
+    <style media="screen">
+    a { color: inherit; }
+    a:hover {color: inherit;}
+
+    </style>
+
+    <style>
+    a:hover {
+    text-decoration: none;
+        }
+</style>
+
+<style media="screen">
+  .scorecard1{
+    position: absolute;
+    top: 90px;
+    left: 33%;
+  }
+  .scorecard2{
+    position: absolute;
+    top: 90px;
+    left: 50%;
+  }
+</style>
+
+    <div class="container-fluid">
+
+      <div class="row">
+        {% if annol %}
+        <a href="/announcement">
+        <marquee class="mb-2 ml-3 mr-1" style="background-color: #a5abb5;">{{annol}}</marquee>
+      </a>
+        {% endif %}
+      </div>
+
+      <div class="row">
+
+        <div class="col-xl">
+          <a href="/article/{{first[3]}}">
+          <div class="card">
+            <div>
+              <img src="https://hancherald.b-cdn.net/images/{{first[0]}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{first[1]}}</h5>
+              <p class="card-text">{{first[2]}}</p>
+              <p class="card-text"><small class="text-muted">Uploaded {{first[4]}}</small></p>
+            </div>
+            </div>
+          </div>
+        </a>
+
+        </div>
+
+        <div class="col-">
+
+          <div class="card ml-1 mr-1 bg-light" style="height: 100%;">
+            <div class="card-body" style="padding: 0px;">
+              {% if not sports %}
+                No Upcoming Games
+              {% else %}
+              {% for sport in sports %}
+                {% if sport[1] == 1 %}
+                    <div class="mt-2 card bg-light border-0 shadow-lg ml-1 mr-1 mb-5">
+                      <div class="container-fluid mt-1">
+                        <div class="row">
+                          <div class="col- text-center text-body ml-1 mr-1">
+                            <img class="text-center" src="https://hancherald.b-cdn.net/static/hanc_logo.png" alt="" width="80px" height="80px">
+                            <h4 class="text-center">HANC</h4>
+                          </div>
+                          <div class="col- text-center text-muted">
+                            <h3>
+                              {% if sport[0] == "b" %}
+                              <i class="fas fa-basketball-ball"></i>
+                              {% endif %}
+                              {% if sport[0] == "s" %}
+                              <i class="fas fa-futbol"></i>
+                              {% endif %}
+                              {% if sport[0] == "h" %}
+                              <i class="fas fa-hockey-puck"></i>
+                              {% endif %}
+
+                            </h3>
+                            <h5>{{sport[2]}}</h5>
+                          </div>
+                          <div class="col- text-center text-body ml-1 mr-1">
+                            <img class="text-center" src="https://hancherald.b-cdn.net/sports_logos/{{sport[3]}}" alt="" width="80px" height="80px">
+                            <h4 class="text-center">{{sport[4]}}</h4>
+                          </div>
+                        </div>
+                      </div>
+                          <div class="card bg-primary scorecard1 rounded-0 border-0" style="width: 50px; text-align: center"><h1>{{sport[5]}}</h1></div>
+                          <div class="card bg-secondary scorecard2 rounded-0 border-0" style="width: 50px; text-align: center"><h1>{{sport[6]}}</h1></div>
+                    </div>
+                    {% else %}
+                    <div class="mt-2 card bg-light border-0 shadow-lg ml-1 mr-1 mb-5">
+                      <div class="container-fluid mt-1">
+                        <div class="row">
+                          <div class="col- text-center text-body ml-1 mr-1">
+                            <img class="text-center" src="https://hancherald.b-cdn.net/sports_logos/{{sport[3]}}" alt="" width="80px" height="80px">
+                            <h4 class="text-center">{{sport[4]}}</h4>
+                          </div>
+                          <div class="col- text-center text-muted">
+                            {% if sport[0] == "b" %}
+                            <i class="fas fa-basketball-ball"></i>
+                            {% endif %}
+                            {% if sport[0] == "s" %}
+                            <i class="fas fa-futbol"></i>
+                            {% endif %}
+                            {% if sport[0] == "h" %}
+                            <i class="fas fa-hockey-puck"></i>
+                            {% endif %}
+                            <h5>{{sport[2]}}</h5>
+                          </div>
+                          <div class="col- text-center text-body ml-1 mr-1">
+                            <img class="text-center" src="https://hancherald.b-cdn.net/static/hanc_logo.png" alt="" width="80px" height="80px">
+                            <h4 class="text-center">HANC</h4>
+                          </div>
+                        </div>
+                      </div>
+                          <div class="card bg-primary scorecard1 rounded-0 border-0" style="width: 50px; text-align: center"><h1>{{sport[6]}}</h1></div>
+                          <div class="card bg-secondary scorecard2 rounded-0 border-0" style="width: 50px; text-align: center"><h1>{{sport[5]}}</h1></div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="card-columns mt-2 ml-5 mr-3" style="column-count: 3;">
+
+      {% if email %}
+      <div class="card text-dark bg-light mb-2 text-center">
+        <div class="card-body">
+          <h3>Subscribe for updates from the HANC Herald</h3>
+          <input type="email" name="" value="" placeholder="Email@mail.com" class="form-control">
+          <button type="button" name="button" class="btn btn-primary border-0 mt-3">Subscribe</button>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if medrash %}
+
+      <a href="/medrash/post/{{medrash[0]}}">
+      <div class="card text-white bg-info mb-2">
+        <div class="card-header">Medrasha Hanc - Parsha {{medrash[1]}}</div>
+        <div class="card-body">
+          <h5 class="card-title">A New Issue Is Avalible!</h5>
+          <p class="card-text">Click here to view it</p>
+        </div>
+      </div>
+      </a>
+
+      {% endif %}
+
+      {% for art in artic %}
+
+      <a href="/article/{{art[3]}}">
+      <div class="card text-dark bg-light mb-2">
+        <div>
+          <img src="https://hancherald.b-cdn.net/images/{{art[0]}}" class="card-img-top" alt="...">
+
+          <div class="card-body">
+            <h5 class="card-title">{{art[1]}}</h5>
+            <p class="card-text">{{art[2]}}</p>
+            <p class="card-text"><small class="text-muted">Uploaded {{art[4]}}</small></p>
+          </div>
+        </div>
+      </div>
+    </a>
+
+      {% endfor %}
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d8440dd275.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $(".searchbar").hide();
+      });
+
+      $(".serbtn").click(function(e){
+        $(".searchbar").show();
+        $(".regbar").hide();
+        $(".serinput").focus();
+      });
+
+      $(".xbtn").click(function(e){
+        $(".searchbar").hide();
+        $(".regbar").show();
+        $(".serinput").blur();
+      });
+
+      $(".serinput").on('keyup', function(e) {
+        if (e.keyCode === 13) {
+          SendSearch();
+        }
+      });
+
+      $(".sbtn").click(function(e){
+        SendSearch();
+      });
+
+      function SendSearch() {
+        value = $(".serinput").val()
+        console.log(value)
+        console.log("button clicked")
+        $.ajax({
+          url: "/api/search",
+          type: "POST",
+          data: {"query":value},
+          success: function(data)
+          {
+              console.log(data)
+              window.location.replace("/search")
+          },
+        });
+      }
+    </script>
+
+  </body>
+</html>

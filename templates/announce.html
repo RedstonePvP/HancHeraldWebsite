@@ -1,0 +1,19 @@
+{% extends "head.html" %}
+
+{% block body %}
+
+<div class="ml-2">
+  <h1>All Announcements</h1>
+</div>
+
+<div class="ml-2 mr-2 mt-2">
+{% for anno in annol %}
+
+  <div class="alert alert-dark mb-2" role="alert">
+    {{ anno }}
+  </div>
+
+{% endfor %}
+</div>
+
+{% endblock %}
